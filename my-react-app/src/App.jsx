@@ -14,10 +14,10 @@ export default function App() {
 
     <section>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Gallery />} />
         <Route path="/about" element={<About />} />
         <Route path="/shop" element={<Shop />} />
-        <Route path="/gallery" element={<Gallery />} />
+        /*<Route path="/gallery" element={<Gallery />} />*/
       </Routes>
       </section>
     </div>
