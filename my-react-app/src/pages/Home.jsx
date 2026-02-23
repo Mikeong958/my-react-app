@@ -7,6 +7,12 @@ const photos = [
   "/img2.jpg",
   "/img3.jpg",
   "/img4.jpg",
+  "/img5.jpg",
+  "/img1.jpg",
+  "/img2.jpg",
+  "/img3.jpg",
+  "/img4.jpg",
+  "/img5.jpg",
 ]
 
 export default function Home() {
@@ -15,7 +21,7 @@ export default function Home() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h1 style={{ textAlign: "center" }}>Art Gallery</h1>
+      <h1 style={{ textAlign: "center"}}>Art Gallery</h1>
 
       <div
         style={{
@@ -32,7 +38,7 @@ export default function Home() {
             alt={`Photo ${i}`}
             style={{
               width: "100%",
-              height: "150px",
+              height: "400px",
               objectFit: "cover",
               borderRadius: "8px",
               cursor: "pointer",

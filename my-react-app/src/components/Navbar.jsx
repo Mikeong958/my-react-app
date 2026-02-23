@@ -6,7 +6,7 @@ export default function Navbar() {
   const location = useLocation()
 
   const links = [
-    { name: "Home", path: "/" },
+    { name: "Gallery", path: "/gallery" },
     { name: "About", path: "/about" },
     { name: "Shop", path: "/shop" },
   ]
@@ -17,7 +17,7 @@ export default function Navbar() {
         position: "sticky",
         top: 0,
         zIndex: 100,
-        width: "100%",
+        width: "20%",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
@@ -26,7 +26,7 @@ export default function Navbar() {
       }}
     >
       {/* Logo */}
-      <div style={{ fontWeight: "bold", fontSize: "22px", cursor: "pointer" }}>
+      <div style={{ fontWeight: "bold", fontSize: "25px", cursor: "pointer" , padding:"10px" }}>
         ArtGallery
       </div>
 
