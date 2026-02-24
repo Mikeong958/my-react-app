@@ -13,3 +13,22 @@
 
   z-index: 9999;   /* 非常关键 */
 }
+
+.navbar-logo {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.navbar-link {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+
+.navbar-link:hover {
+  color: #a4a4a4;
+}

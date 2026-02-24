@@ -1,37 +1,51 @@
 .gallery-container {
-  width: 90%;
-  margin: 60px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 120px 60px;
 }
 
-/* 每一排 */
+/* 通用 */
 .row {
   display: grid;
   gap: 20px;
+  margin-bottom: 40px;
 }
 
-/* 三张 */
-.row.three {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-/* 两张 */
-.row.two {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-/* 图片样式 */
 .row img {
   width: 100%;
-  height: 320px; /* 固定高度保证整齐 */
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 0px;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
 .row img:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
+}
+
+/* ===== 第一排 3 张（标准高度）===== */
+.row-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.row-3 img {
+  height: 420px;
+}
+
+/* ===== 第二排 2 张（更大更有气势）===== */
+.row-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.row-2 img {
+  height: 600px;   /* 👈 更高更震撼 */
+}
+
+/* ===== 第三排 5 张（横向感强，较矮）===== */
+.row-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.row-5 img {
+  height: 500px;   /* 👈 比较长，但不高 */
 }

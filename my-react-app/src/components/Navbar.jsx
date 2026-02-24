@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
@@ -17,19 +18,32 @@ export default function Navbar() {
         position: "sticky",
         top: 0,
         zIndex: 100,
-        width: "20%",
+        width: "22%",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "10px 10px",
+        padding: "10px 60px",
         backgroundColor: "transparent", // 始终透明
+        
       }}
     >
       {/* Logo */}
-      <div style={{ fontWeight: "bold", fontSize: "25px", cursor: "pointer" , padding:"10px" }}>
+      <div style={{ marginTop: "20px", fontWeight: "bold", fontSize: "25px", cursor: "pointer" , padding:"10px" , fontFamily: "'Fira Sans', sans-serif"}}>
         ArtGallery
+        <div
+    style={{
+      fontSize: "14px",
+      fontFamily: "'Montserrat', sans-serif",
+      fontWeight: 400,
+      color: "#666",
+      marginTop: "2px", // 与主标题间距
+      letterSpacing: "0.5px",
+    }}
+  >
+    Mike
+  </div>
       </div>
-
+      
       {/* 大屏幕菜单 */}
       <div
         className="desktop-menu"
@@ -45,7 +59,7 @@ export default function Navbar() {
             to={link.path}
             style={{
               textDecoration: "none",
-              color: location.pathname === link.path ? "#ff4500" : "#333",
+              color: location.pathname === link.path ? "#1d1d1d" : "#828282",
               fontWeight: location.pathname === link.path ? "bold" : "500",
               padding: "5px 8px",
               borderRadius: "4px",
@@ -121,7 +135,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               style={{
                 textDecoration: "none",
-                color: location.pathname === link.path ? "#ff4500" : "#333",
+                color: location.pathname === link.path ? "#acacac" : "#333",
                 fontWeight: location.pathname === link.path ? "bold" : "500",
               }}
             >

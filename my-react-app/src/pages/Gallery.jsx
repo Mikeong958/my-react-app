@@ -3,29 +3,32 @@ import Lightbox from "yet-another-react-lightbox"
 import "yet-another-react-lightbox/styles.css"
 import "./Gallery.css"
 
-// 图片数组
 const photos = [
-  "/img1.jpg",
-  "/img2.jpg",
-  "/img3.jpg",
-  "/img4.jpg",
-  "/img5.jpg",
-  "/img1.jpg",
-  "/img2.jpg",
-  "/img3.jpg",
+  "/img1.jpeg",
+  "/img2.jpeg",
+  "/img3.jpeg",
+  "/img4.jpeg",
+  "/img5.jpeg",
+  "/img6.jpeg",
+  "/img7.jpeg",
+  "/img8.jpeg",
+  "/img9.jpeg",
+  "/img10.jpeg",
+  "/img11.jpeg",
+  "/img12.jpeg",
 ]
 
 export default function Gallery() {
   const [open, setOpen] = useState(false)
   const [index, setIndex] = useState(0)
 
-  // 生成交错排版 row
-  let rows = []
+  const rows = []
   let i = 0
-  const pattern = [3, 2] // 第一排 3 张，第二排 2 张循环
+  const pattern = [3, 2, 5]
   let patternIndex = 0
+
   while (i < photos.length) {
-    const count = pattern[patternIndex % 2]
+    const count = pattern[patternIndex % pattern.length]
     rows.push(photos.slice(i, i + count))
     i += count
     patternIndex++
@@ -33,22 +36,25 @@ export default function Gallery() {
 
   return (
     <div className="gallery-container">
-      {rows.map((row, rowIdx) => (
+      {rows.map((row, rowIndex) => (
         <div
-          key={rowIdx}
-          className={`row ${row.length === 3 ? "three" : "two"}`}
+          key={rowIndex}
+          className={`row row-${row.length}`}
         >
-          {row.map((src, idx) => (
-            <img
-              key={idx}
-              src={src}
-              alt={`Photo ${rowIdx}-${idx}`}
-              onClick={() => {
-                setIndex(rowIdx * pattern[0] + idx)
-                setOpen(true)
-              }}
-            />
-          ))}
+          {row.map((src, i) => {
+            const photoIndex = photos.indexOf(src)
+            return (
+              <img
+                key={i}
+                src={src}
+                alt=""
+                onClick={() => {
+                  setIndex(photoIndex)
+                  setOpen(true)
+                }}
+              />
+            )
+          })}
         </div>
       ))}
 
