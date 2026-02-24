@@ -22,7 +22,7 @@ export default function Navbar() {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "10px 60px",
+        padding: "30px 60px",
         backgroundColor: "transparent", // 始终透明
         
       }}
